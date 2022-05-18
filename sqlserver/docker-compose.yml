@@ -1,0 +1,11 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: MsSqlServer
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=Buixuantoan@916263
+    volumes:
+     - ./sqlserver_data:/var/opt/mssql/data
+    ports:
+     - 1433:1433

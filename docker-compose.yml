@@ -1,0 +1,75 @@
+services:
+
+  mysql_db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_USER: toanbui1991
+      MYSQL_PASSWORD: Buixuantoan@916263
+      MYSQL_ROOT_PASSWORD: Buixuantoan@916263
+    volumes:
+      - ./datadir:/var/lib/mysql  
+    ports:
+      - 3306:3306
+
+  postgres_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Buixuantoan@916263
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+
+  mongo_db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Buixuantoan@916263
+    volumes:
+      - ./mongo_data:/data/db -d mongo
+    ports:
+      - 27018:27017
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: MsSqlServer
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=Buixuantoan@916263
+    volumes:
+     - ./sqlserver_data:/var/opt/mssql/data
+    ports:
+     - 1433:1433
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    environment:
+      RABBITMQ_DEFAULT_USER: 'toanbui1991'
+      RABBITMQ_DEFAULT_PASS: 'Buixuantoan@916263'
+    ports:
+        - 5672:5672 #back-end port
+        - 15672:15672 #front-end port
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 8082:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - ~/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker
+
+
+

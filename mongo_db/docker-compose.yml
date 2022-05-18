@@ -1,0 +1,12 @@
+services:
+
+  mongo_db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Buixuantoan@916263
+    volumes:
+      - ./mongo_data:/data/db -d mongo
+    ports:
+      - 27017:27017
