@@ -68,7 +68,7 @@ x-airflow-common:
     AIRFLOW__SMTP__SMTP_MAIL_FROM: ${AIRFLOW__SMTP__SMTP_MAIL_FROM}
   volumes:
     - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
+    - ./logs:/usr/local/airflow/log #permission error here, change log directory.
     - ./plugins:/opt/airflow/plugins
     - ./config/input_files:/opt/airflow/input_files
     - ./config/output_files:/opt/airflow/output_files
