@@ -10,8 +10,8 @@ services:
         - 5672:5672
         - 15672:15672 #front-end port
     volumes:
-        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - ./data/:/var/lib/rabbitmq/
+        - ./log/:/var/log/rabbitmq
     networks:
         - rabbitmq_go_net
 
