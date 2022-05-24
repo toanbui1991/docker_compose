@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\buixu\Toan\python_projects\docker_compose\venv
+set VIRTUAL_ENV=C:\Users\LT04\toanbui1991\python\docker_compose\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
