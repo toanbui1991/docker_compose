@@ -4,7 +4,7 @@ services:
     container_name: MsSqlServer
     environment:
      - ACCEPT_EULA=Y
-     - SA_PASSWORD=Buixuantoan@916263
+     - SA_PASSWORD=${SA_PASSWORD}
     volumes:
      - ./sqlserver_data:/var/opt/mssql/data
     ports:
