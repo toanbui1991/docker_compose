@@ -1,6 +1,9 @@
+version: '3'
+
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server
+    user: root # run build container as root
     container_name: MsSqlServer
     environment:
      - ACCEPT_EULA=Y
