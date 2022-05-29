@@ -14,6 +14,7 @@ rabbitmq/*
 !rabbidmq/docker-compose.yml
 sqlserver/*
 !sqlserver/docker-compose.yml
+!sqlserver/northwind_sqlserver.sql
 redis/*
 !redis/docker-compose.yml
 venv/
