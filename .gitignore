@@ -9,9 +9,12 @@ mysql/*
 !mysql/northwind_mysql5.sql
 postgres/*
 !postgres/docker-compose.yml
+!postgres/northwind_postgres.sql
 rabbitmq/*
 !rabbidmq/docker-compose.yml
 sqlserver/*
 !sqlserver/docker-compose.yml
 redis/*
 !redis/docker-compose.yml
+venv/
+config.py
