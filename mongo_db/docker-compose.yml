@@ -1,8 +1,9 @@
 version: '3'
 services:
 
-  mongo_db:
-    image: mongo
+  mongo:
+    image: mongo:4.2.22-rc0-bionic
+    container_name: mongo
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
